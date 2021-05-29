@@ -12,9 +12,9 @@
 }
 
 .Titulo {
+  display: block;
   color: rgb(255, 255, 255, 0.75);
   font-size: 3em;
-  display: flex;
   text-align: initial;
   margin-top: 0.65em;
   white-space: nowrap;
@@ -31,6 +31,6 @@
     width: 0;
   }
   to {
-    width: 11em;
+    width: 12em;
   }
 }

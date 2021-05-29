@@ -101,8 +101,10 @@ function Home() {
   return (
     <section className="container">
     <div className="body">      
-      <p className="Titulo typing-animation">Olá!!! <br/> Eu sou Nayane, <br/> 
-      Desenvolvedora Front-End.</p>
+      <div className="Titulo typing-animation">
+        <p>Olá!!!</p> <p> Eu sou Nayane, </p> 
+      <p>Desenvolvedora Front-End.</p>
+      </div>
       </div>
     <div className={classes.root}> 
       {images.map((image) => (
