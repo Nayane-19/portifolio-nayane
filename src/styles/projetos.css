@@ -1,0 +1,5 @@
+.card {
+  display: flex;
+  padding: 1em 4em 2em;
+  place-content: space-between;
+}

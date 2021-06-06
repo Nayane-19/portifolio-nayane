@@ -2,3 +2,13 @@
   margin: 0px;
   padding: 0px;
 }
+
+#root {
+  background: linear-gradient(0, #16073d, #000000);
+}
+
+.container {
+  min-width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+}

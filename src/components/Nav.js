@@ -1,26 +1,10 @@
 import React from 'react';
-import './Home.css'
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
+import { Link } from "react-router-dom";
 
-const images = [
-  {
-    url: '/static/images/grid-list/breakfast.jpg',
-    title: 'Minhas Habilidades',
-    width: '40%',
-  },
-  {
-    url: '/static/images/grid-list/burgers.jpg',
-    title: 'Projetos',
-    width: '30%',
-  },
-  {
-    url: '/static/images/grid-list/camera.jpg',
-    title: 'Sobre mim',
-    width: '30%',
-  },
-];
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,6 +12,8 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     minWidth: 300,
     width: '100%',
+    marginBottom: '2rem',
+    justifyContent: 'center',
   },
   image: {
     position: 'relative',
@@ -83,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
   imageTitle: {
     position: 'relative',
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
+    minWidth: '5rem',
   },
   imageMarked: {
     height: 3,
@@ -95,34 +82,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Home() {
+export default function Nav(props) {
   const classes = useStyles();
 
   return (
-    <section className="container">
-    <div className="body">      
-      <div className="Titulo typing-animation">
-        <p>Olá!!!</p> <p> Eu sou Nayane, </p> 
-      <p>Desenvolvedora Front-End.</p>
-      </div>
-      </div>
-    <div className={classes.root}> 
-      {images.map((image) => (
+    <div className={classes.root}>
+        <Link to={props.link}>
         <ButtonBase
           focusRipple
-          key={image.title}
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
           style={{
-            width: image.width,
+            width: '30%',
           }}
         >
-          <span
-            className={classes.imageSrc}
-            style={{
-              backgroundImage: `url(${image.url})`,
-            }}
-          />
+         
           <span className={classes.imageBackdrop} />
           <span className={classes.imageButton}>
             <Typography
@@ -131,17 +105,12 @@ function Home() {
               color="inherit"
               className={classes.imageTitle}
             >
-              {image.title}
+              {props.title}
               <span className={classes.imageMarked} />
             </Typography>
           </span>
         </ButtonBase>
-      ))}
+        </Link>
     </div>
-    
-    </section>
   );
 }
-
-
-export default Home;
